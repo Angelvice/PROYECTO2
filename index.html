@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Web</title>
+    <!-- Enlaces a Bootstrap y tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+         /* Estilo para el contenedor del niño hacker */
+         .hacker-boy-container {
+            text-align: center;
+        }
+
+        /* Estilo para la imagen del niño hacker */
+        .hacker-boy {
+            width: 150px; /* Ajusta el ancho según tu imagen */
+            animation: bounce 2s infinite; /* Animación que hace que la imagen salte */
+        }
+
+        /* Animación de rebote */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px); /* Ajusta la altura del salto */
+            }
+            60% {
+                transform: translateY(-10px); /* Ajusta la altura del salto */
+            }
+        }
+        .enlace-animado {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* Estilo cuando el cursor pasa sobre el enlace (hover) */
+        .enlace-animado:hover {
+            background-color: #0056b3;
+            transform: scale(1.1); /* Hace que el enlace se agrande un poco */
+        }
+        /* Agrega estilos CSS personalizados aquí */
+        .subtopics {
+            display: none;
+        }
+        .subtopics-button {
+            cursor: pointer;
+        }
+        /* Estilo para el fondo de la página */
+body {
+    background-image: url('https://imageurl.com/fondo-sistemas.jpg'); /* Cambia la URL de la imagen por la que desees */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0; /* Un color de fondo de respaldo */
+    color: #333; /* Color de texto para una mejor legibilidad */
+}
+
+/* Estilo para los subtemas usando Bootstrap */
+.subtopics-button {
+    background-color: #007bff; /* Color de fondo para el botón Sub Temas */
+    color: #fff; /* Color de texto para el botón Sub Temas */
+    border: none; /* Sin borde para el botón Sub Temas */
+    border-radius: 15px; /* Bordes redondeados para el botón Sub Temas */
+    padding: 10px 20px; /* Espaciado interior del botón Sub Temas */
+    margin-bottom: 20px; /* Margen inferior para separar del contenido */
+}
+
+.subtopic-button {
+    background-color: #f0f0f0; /* Color de fondo para los botones de subtemas */
+    color: #333; /* Color de texto para los botones de subtemas */
+    border: 1px solid #ccc; /* Borde ligero para los botones de subtemas */
+    border-radius: 5px; /* Bordes redondeados para los botones de subtemas */
+    padding: 5px 10px; /* Espaciado interior de los botones de subtemas */
+    margin-right: 10px; /* Margen derecho para separar los botones de subtemas */
+}
+
+.subtopics-content {
+    border: 1px solid #ccc; /* Borde para el contenido de subtemas */
+    border-radius: 15px; /* Bordes redondeados para el contenido de subtemas */
+    padding: 50px; /* Espaciado interior del contenido de subtemas */
+    margin-bottom: 20px; /* Margen inferior para separar del siguiente subtema */
+}
+
+
+        /* Estilo para los botones de subtema */
+        .subtopic-button {
+            background-color: #007bff; /* Color de fondo azul */
+            color: #fff; /* Texto en blanco */
+            border: none;
+            margin: 5px;
+        }
+
+        /* Estilo para las tablas */
+        table {
+            width: 100%;
+            margin: 50px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Color de fondo gris claro para encabezados */
+        }
+
+
+        /* Estilo para los botones de subtema */
+        .subtopic-button {
+            background-color: #007bff; /* Color de fondo azul */
+            color: #fff; /* Texto en blanco */
+            border: none;
+            margin: 5px;
+        }
+
+        /* Estilo para las tablas */
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Color de fondo gris claro para encabezados */
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Frontend Web</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);" onclick="toggleSection('home-content')">Inicio</a>
+                    <div id="home-content" style="display: none;">
+                        <!-- Aquí coloca tu contenido de Inicio -->
+                        <p> ¡Bienvenido a Backend Web! Aquí exploramos el mundo del backend y sus intrincados aspectos.</p>
+                        <p>Descubre cómo el backend es la columna vertebral de las aplicaciones web en nuestro recorrido por el desarrollo tecnológico, junto a sus subtemas con su debida información</p>
+                    </div>
+                    
+
+                </li>
+                <li class="nav-item">
+                   
+                        <a class="nav-link" href="javascript:void(0);" onclick="toggleSection('about-content')">Acerca de</a>
+                    </li>
+                    <div id="about-content" style="display: none;">
+                        <!-- Aquí coloca tu contenido Acerca de -->
+                        <p>Backend Web fue creado con el motivo de informar sobre el tema del desarrollo backend.
+                        </p>
+                        <p>Espero poder ayudarte a entender más sobre este bonito y complejo tema que es el backend , y lo amplio que es.</p>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" onclick="toggleSection('contact-content')">Contacto</a>
+                    <div id="contact-content" style="display: none;">
+                        <!-- Aquí coloca tu contenido de Contacto -->
+                        <p>¿Tienes alguna pregunta o comentario sobre el backend? ¡Estoy aquí para ayudarte!
+                            - Puedes contactarme enviando un correo electrónico a miguel.gomez47@unach.mx.</p>
+                    </div>
+                    
+                </li>
+                
+            </ul>
+        </div>
+        
+    </nav>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- ... (mantén esta parte igual) ... -->
+    </nav>
+
+    <!-- Sección de encabezado -->
+    <header class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Bienvenido al Mundo del Frontend</h1>
+            <p class="lead">Construyendo la web del futuro.</p>
+        </div>
+    </header>
+ <h1><b><center>Introducción al Back End Development</center></b></h1>
+<hr>
+                   <center><p>El desarrollo backend se
+                   enfoca en la creación y gestión de la lógica y la funcionalidad que permiten que
+                   una aplicación web o software funcione. Se ocupa de la interacción con bases de
+                    datos, autenticación, procesamiento de datos y más. A menudo, se divide en tres
+                   componentes principales: servidor, base de datos y aplicación.</p></center>
+                   <center><h2><b>¿Cual es la funcion del backend</b></h2></center>
+                   <center><p>El backend es la parte del desarrollo web que se encarga de que toda la lógica de una página web  funcione. Se trata del conjunto de acciones que pasan en una web pero que no vemos como, por ejemplo, la comunicación con el servidor.
+                    Algunas de las funciones que se gestionan en la parte del back-end son:
+                   </p></center>
+                   <center><ul>
+                    <li>El Desarrollo de funciones que simplifiquen el proceso de desarrollo.</li>
+                    <li>Acciones de lógica.</li>
+                    <li>Conexión con bases de datos.</li>
+                    <li>Uso de librerías del servidor web (por ejemplo para implementar temas de caché o para comprimir las imágenes de la web).</li>
+                   </ul></center>
+
+                   <center><img src="./img/fondowebb.jpg" alt="" height="700px"></center>
+
+
+    <!-- Sección "Acerca de" -->
+    <section id="about" class="container">
+        <!-- ... (mantén esta parte igual) ... -->
+    </section>
+
+
+    <!-- Sección de Subtemas -->
+    <div class="container">
+        <center><button class="btn btn-primary subtopics-button" onclick="toggleSubtopics()">Sub Temas</button></center>
+    </div><br>
+    
+    <!-- Sección de Subtemas -->
+    <center> <div class="container subtopics">
+        <div class="row">
+            <div class="col-md-2">
+                <button class="btn btn-secondary subtopic-button" onclick="toggleSubtopic(1)">Subtema 1</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-secondary subtopic-button" onclick="toggleSubtopic(2)">Subtema 2</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-secondary subtopic-button" onclick="toggleSubtopic(3)">Subtema 3</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-secondary subtopic-button" onclick="toggleSubtopic(4)">Subtema 4</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-secondary subtopic-button" onclick="toggleSubtopic(5)">Subtema 5</button>
+            </div>
+        </div>
+    </div>
+</center>
+    <!-- Sección de contenido de subtemas -->
+    <div class="container">
+        <div id="subtopic-content-1" class="subtopics-content" style="display: none;">
+            <!-- Contenido del Subtema 1 -->
+            <center><h1>Lenguajes de Programación Back End
+            </h1></center>
+            <ol>
+                <li><b>Python:</b></li>
+                
+                <p><b>Características:</b> Python es conocido por su legibilidad y sintaxis clara. Es un lenguaje de programación multipropósito que se usa ampliamente en el desarrollo web. Tiene una gran comunidad de desarrolladores y una amplia variedad de bibliotecas y frameworks.
+                    </p>
+                    <p><b>Frameworks destacados:</b> Django y Flask son dos de los frameworks web más populares para el desarrollo Back End en Python. Django es conocido por su enfoque en la eficiencia y la seguridad, mientras que Flask es más ligero y flexible, lo que permite a los desarrolladores elegir sus propias herramientas.</p>
+                    <img src="./img/Python.png" alt="" width="300" height="300">
+              
+                <li><b>Java:</b></li>
+                <p><b>Características:</b> Java es un lenguaje de programación de propósito general que se utiliza en aplicaciones empresariales a gran escala debido a su portabilidad y escalabilidad. Java se ejecuta en la Máquina Virtual de Java (JVM), lo que permite que el código sea independiente de la plataforma.</p>
+                <p><b>Frameworks destacados:</b> Spring es un framework muy utilizado en el desarrollo web Java. Proporciona un amplio conjunto de módulos y herramientas para simplificar el desarrollo de aplicaciones empresariales.</p>
+                <img src="./img/java.png" alt=""width="250" height="300">
+                <li><b>PHP:</b></li>
+                <p><b>Características:</b> PHP (Hypertext Preprocessor) es un lenguaje de script ampliamente utilizado en el desarrollo de aplicaciones web dinámicas. Se integra bien con servidores web como Apache y es conocido por su facilidad de uso y flexibilidad.</p>
+                <p><b>Frameworks destacados:</b> Algunos de los frameworks populares en PHP son Laravel, Symfony y CodeIgniter. Estos frameworks simplifican el desarrollo de aplicaciones web al proporcionar estructura y características predefinidas.</p>
+                <img src="./img/php.png" alt=""width="300" height="300">
+                <li><b>Ruby:</b></li>
+                <p><b>Características:</b> Ruby es un lenguaje de programación dinámico y de alto nivel conocido por su elegancia y facilidad de lectura. Ruby on Rails (también conocido como Rails) es un framework que se utiliza para desarrollar aplicaciones web de manera rápida y estructurada.</p>
+                <p><b>Frameworks destacados:</b> Ruby on Rails es uno de los frameworks más conocidos en el desarrollo web Ruby. Ofrece una estructura MVC (Model-View-Controller) que facilita la organización del código y la creación de aplicaciones web eficientes.</p>
+                <img src="./img/ruby.png" alt=""width="300" height="300">
+                <h4>Quieres conocer mas sobre el tema ,entra al siguiente link de un video, donde podras conocer mas sobre el tema.</h4>
+                <center><a href="https://www.youtube.com/watch?v=AEGizwE4p90&ab_channel=MaryG.Munguia" target="_blank" class="enlace-animado"> link para video </a></center><br>
+                <div class="hacker-boy-container">
+                    <img src="./img/hack.jpg" alt="Niño Hacker" class="hacker-boy">
+                </div>
+            </ol>
+        </div>
+        <div id="subtopic-content-2" class="subtopics-content" style="display: none;">
+            <!-- Contenido del Subtema 2 -->
+            <center><h1> Frameworks de Desarrollo Back End
+            </h1></center>
+            <ol>
+                <li><b>Node.js:</b></li>
+                    <p><b>Descripción:</b> Node.js es un entorno de ejecución de JavaScript en el lado del servidor. Es famoso por su enfoque en la programación asíncrona, lo que significa que puede manejar muchas conexiones simultáneas sin bloquear el hilo de ejecución. Esto lo hace adecuado para aplicaciones en tiempo real y servidores rápidos y escalables.</p>
+                    <img src="./img/node.png" alt="">
+                    <p><b>Características destacadas:</b>
+                        <ul>
+                            <li>Programación asíncrona con el uso de callbacks y Promesas.</li>
+                            <li>Amplio ecosistema de paquetes y módulos disponibles a través de npm (Node Package Manager).</li>
+                            <li>Utilizado en aplicaciones web en tiempo real, aplicaciones de transmisión de datos y microservicios.</li>
+                        </ul><br>
+                        <p><b>Ejemplo de uso:</b> Aplicaciones de chat en tiempo real, servidores web, aplicaciones de transmisión en vivo.</p>
+                    </p>
+               
+                <li><b>Django:</b></li>
+                    
+                    <p><b>Descripción:</b> Django es un framework de desarrollo web de alto nivel escrito en Python. Se centra en la creación de aplicaciones web robustas y seguras siguiendo el patrón Modelo-Vista-Controlador (MVC). Django promueve la reutilización de código y la eficiencia en el desarrollo.</p>
+                    <img src="./img/django.png" alt=""width="300" height="300">
+                    <p><b>Características destacadas:</b></p>
+                    <ul>
+                        <li>ORM (Object-Relational Mapping) incorporado para trabajar con bases de datos de manera eficiente.</li>
+                        <li>Sistema de autenticación y seguridad integrado.</li>
+                        <li>Administrador de Django para una interfaz de administración predefinida.</li>
+                        
+                    </ul><br>
+                    <p><b>Ejemplo de uso:</b> Sitios web complejos, aplicaciones empresariales, aplicaciones web seguras.</p>
+              
+                <li><b>Ruby on Rails:</b></li>
+                    <p><b>Descripción:</b> Ruby on Rails, comúnmente conocido como Rails, es un framework de desarrollo web que utiliza el lenguaje Ruby. Sigue el patrón Modelo-Vista-Controlador (MVC) y favorece la convención sobre la configuración para una eficiencia óptima. Rails es conocido por su simplicidad y productividad.</p>
+                    <img src="./img/rails.png" alt="">
+                    <p><b>Características destacadas:</b></p>
+                    <ul>
+                        <li>Uso de ActiveRecord para interactuar con bases de datos de manera sencilla.</li>
+                        <li>Generadores de código para acelerar el desarrollo.</li>
+                        <li>Enfoque en la "magia" de Rails, lo que significa que realiza muchas tareas automáticamente.</li>
+                        
+                    </ul><br>
+                    <p><b>Ejemplo de uso:</b> Aplicaciones web rápidas para startups, proyectos ágiles de desarrollo.</p>
+                
+                <li><b>Spring Boot:</b></li>
+                    <p><b>Descripción:</b> Spring Boot es un framework para Java que simplifica la construcción de aplicaciones empresariales. Se encarga de gran parte de la configuración automáticamente, lo que facilita el desarrollo y despliegue de aplicaciones. Spring Boot se basa en el ecosistema Spring.</p>
+                    <img src="./img/spring.png" alt="">
+                    <p><b>Características destacadas:</b></p>
+                    <ul>
+                        <li>Configuración automática basada en convenciones.</li>
+                        <li>Contenedor integrado de Servlet para desarrollo web.</li>
+                        <li>Soporte para la creación de microservicios y aplicaciones RESTful.</li>
+                        
+                    </ul><br>
+                    <p><b>Ejemplo de uso:</b> Aplicaciones empresariales de cualquier escala, servicios web, microservicios.</p>
+                    <h4>Quieres conocer mas sobre el tema ,entra al siguiente link de un video, donde podras conocer mas sobre el tema.</h4>
+                    <center><a href="https://www.youtube.com/watch?v=bDRFiomUfdc&ab_channel=hdeleon.net" target="_blank" class="enlace-animado"> link para video </a></center><br>
+                    <div class="hacker-boy-container">
+                        <img src="./img/hack.jpg" alt="Niño Hacker" class="hacker-boy">
+                    </div>
+            </ol>
+        </div>
+        <div id="subtopic-content-3" class="subtopics-content" style="display: none;">
+            <!-- Contenido del Subtema 3 -->
+            <center><h1> Bases de Datos y Back End
+            </h1></center>
+            <ol>
+                <li><b>SQL (Lenguaje de consulta estructurado):</b></li>
+                <p><b>Descripción:</b> SQL es un lenguaje de programación utilizado para gestionar bases de datos relacionales. Permite la creación, modificación y consulta de datos en bases de datos relacionales. Se utiliza ampliamente en aplicaciones que requieren almacenamiento y gestión estructurada de datos.</p>
+                <img src="./img/sql.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Utiliza comandos como SELECT, INSERT, UPDATE y DELETE para interactuar con datos.</li>
+                    <li>Permite definir la estructura de las tablas y establecer relaciones entre ellas.</li>
+                    <li>Proporciona un alto nivel de integridad de datos y seguridad.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> Sistemas de gestión de bases de datos relacionales como MySQL, PostgreSQL, Microsoft SQL Server.</p>
+
+                <li><b>NoSQL (Bases de datos No relacionales):</b></li>
+                <p><b>Descripción:</b> NoSQL se refiere a una variedad de bases de datos que no siguen el modelo relacional tradicional. Estas bases de datos son ideales para almacenar grandes volúmenes de datos no estructurados o semiestructurados, como documentos JSON o datos de sensores.</p>
+                <img src="./img/nosql.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>No requieren un esquema fijo, lo que permite flexibilidad en la estructura de datos.</li>
+                    <li>Pueden manejar grandes cantidades de datos y escalabilidad horizontal.</li>
+                    <li>Adecuadas para aplicaciones web modernas y big data.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> MongoDB para almacenamiento de documentos, Cassandra para datos distribuidos y escalables.</p>
+
+                <li><b>ORM (Object-Relational Mapping):</b></li>
+                <p><b>Descripción:</b> ORM es una técnica que facilita la interacción entre bases de datos relacionales y código en lenguajes de programación orientados a objetos, como Java o Python. Traduce registros de bases de datos en objetos que pueden manipularse en el código de manera más natural.</p>
+                <img src="./img/orm.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Abstrae la complejidad de las consultas SQL al proporcionar métodos de alto nivel para interactuar con la base de datos.</li>
+                    <li>Mapea objetos de clases a tablas de bases de datos y viceversa.</li>
+                    <li>Ayuda a reducir la duplicación de código y facilita el mantenimiento del código.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> Hibernate (Java), Entity Framework (C#), SQLAlchemy (Python).</p>
+                <h4>Quieres conocer mas sobre el tema ,entra al siguiente link de un video, donde podras conocer mas sobre el tema.</h4>
+                <center><a href="https://www.youtube.com/watch?v=v3KhkKtllh8&ab_channel=VictorRoblesWEB" target="_blank" class="enlace-animado"> link para video </a></center><br>
+                <div class="hacker-boy-container">
+                    <img src="./img/hack.jpg" alt="Niño Hacker" class="hacker-boy">
+                </div>
+
+            </ol>
+        </div>
+        <div id="subtopic-content-4" class="subtopics-content" style="display: none;">
+            <!-- Contenido del Subtema 4 -->
+            <center><h1> APIs y Servicios Web
+            </h1></center>
+            <ol>
+                <li><b>API (Interfaz de Programación de Aplicaciones):</b></li>
+                <p><b>Descripción:</b> Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permiten que diferentes aplicaciones o servicios se comuniquen entre sí. Proporciona un conjunto de funciones y métodos que una aplicación puede utilizar para acceder y solicitar datos o funcionalidades de otro sistema, servicio o aplicación.</p>
+                <img src="./img/api.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Las API pueden utilizar diferentes protocolos de comunicación, como HTTP, REST, SOAP, GraphQL, etc.</li>
+                    <li>Las API REST son un enfoque común en el desarrollo web y utilizan solicitudes HTTP (GET, POST, PUT, DELETE) para acceder y manipular recursos a través de URLs.</li>
+                    <li>Las API son fundamentales en la integración de sistemas y servicios, permitiendo que aplicaciones de terceros accedan a datos o funcionalidades de una aplicación principal.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> Acceso a datos de redes sociales a través de sus APIs (por ejemplo, la API de Twitter), integración de sistemas de pago en línea, acceso a datos de ubicación a través de la API de Google Maps.</p>
+
+                <li><b>SOAP (Simple Object Access Protocol):</b></li>
+                <p><b>Descripción:</b> SOAP es un protocolo de comunicación utilizado en el intercambio de información estructurada en la implementación de servicios web. Se basa en XML para definir el formato de los mensajes y utiliza el estándar WSDL (Lenguaje de Descripción de Servicios Web) para describir los servicios y los métodos disponibles.</p>
+                <img src="./img/soap.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Utiliza un formato XML para estructurar los mensajes, lo que facilita la interoperabilidad entre diferentes plataformas.</li>
+                    <li>Proporciona un alto nivel de seguridad y control sobre las transacciones.</li>
+                    <li>Es especialmente adecuado para aplicaciones empresariales y servicios que requieren transacciones seguras y confiables.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> Integración de sistemas empresariales, comunicación entre aplicaciones distribuidas en entornos corporativos.</p>
+
+                <li><b>Microservicios:</b></li>
+                <p><b>Descripción:</b> Los microservicios son un enfoque arquitectónico en el desarrollo de software en el que una aplicación se construye como un conjunto de servicios pequeños e independientes que se comunican entre sí a través de API. Cada microservicio se centra en una tarea o función específica y puede desarrollarse, implementarse y escalarse de manera independiente.</p>
+                <img src="./img/micro.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Permite la división de aplicaciones en componentes más manejables y escalables.</li>
+                    <li>Los microservicios pueden implementarse utilizando diferentes tecnologías y lenguajes de programación.</li>
+                    <li>Facilita la implementación de DevOps y CI/CD (Integración Continua/Despliegue Continuo) para un desarrollo ágil y rápido.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> Grandes aplicaciones web y sistemas empresariales que se benefician de la modularidad y la escalabilidad, como aplicaciones de comercio electrónico y plataformas en línea.</p>
+                <h4>Quieres conocer mas sobre el tema ,entra al siguiente link de un video, donde podras conocer mas sobre el tema.</h4>
+                <center><a href="https://www.youtube.com/watch?v=ee15MyX1QvM&ab_channel=BorjaGalisteo" target="_blank" class="enlace-animado"> link para video </a></center><br>
+                <div class="hacker-boy-container">
+                    <img src="./img/hack.jpg" alt="Niño Hacker" class="hacker-boy">
+                </div>
+            </ol>
+        </div>
+        <div id="subtopic-content-5" class="subtopics-content" style="display: none;">
+            <!-- Contenido del Subtema 5 -->
+            <center><h1> Seguridad en Back End Development
+            </h1></center>
+            <ol>
+                <li><b>Autenticación y Autorización:</b></li>
+                <p><b>Autenticación:</b> La autenticación se refiere al proceso de verificar la identidad de un usuario para asegurarse de que realmente es quien dice ser. Por lo general, esto se logra mediante credenciales, como un nombre de usuario y una contraseña, o mediante métodos de autenticación más avanzados, como el uso de tokens o autenticación biométrica.</p>
+                <p><b>Autorización:</b> La autorización implica determinar qué acciones y recursos específicos tiene permitido acceder o realizar un usuario autenticado. Se define qué usuarios tienen acceso a qué partes de una aplicación o sistema, y bajo qué condiciones.</p>
+                <img src="./img/auto.png" alt=""width="300" height="300">
+                
+                <li><b>Encriptación:</b></li>
+                <p><b>Descripción:</b> La encriptación es el proceso de convertir información en un formato codificado o cifrado, de modo que solo las partes autorizadas puedan acceder y descifrar la información. Existen varios algoritmos y métodos de encriptación disponibles para proteger datos confidenciales durante la transmisión y el almacenamiento.</p>
+                <img src="./img/encrip.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Protege los datos confidenciales de accesos no autorizados.</li>
+                    <li>Utiliza algoritmos matemáticos para convertir datos en un formato ilegible.</li>
+                    <li>Requiere una clave (clave de encriptación) para desencriptar y acceder a los datos.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> La encriptación se utiliza en la transmisión segura de datos a través de HTTPS (HTTP seguro), en el almacenamiento de contraseñas en bases de datos, en la protección de datos de tarjetas de crédito, entre otros.</p>
+
+                <li><b>Prevención de Ataques:</b></li>
+                <p><b>Descripción:</b> La prevención de ataques se refiere a la implementación de medidas y prácticas de seguridad para proteger una aplicación o sistema contra vulnerabilidades y ataques comunes. Algunos de los tipos de ataques comunes incluyen inyecciones SQL, ataques de cross-site scripting (XSS), y ataques de denegación de servicio (DDoS).</p>
+                <img src="./img/pre.png" alt=""width="300" height="300">
+                <p><b>Características destacadas:</b></p>
+                <ul>
+                    <li>Utiliza técnicas de validación de datos y parámetros para prevenir la inyección de código malicioso.</li>
+                    <li>Implementa controles de seguridad en el lado del servidor y del cliente para prevenir ataques XSS.</li>
+                    <li>Utiliza servicios de mitigación de DDoS y medidas de seguridad para proteger contra ataques de denegación de servicio.</li>
+                </ul><br>
+                <p><b>Ejemplo de uso:</b> La prevención de ataques es esencial en la seguridad de aplicaciones web y sistemas en línea para proteger la integridad de los datos y la disponibilidad del servicio.</p>
+                <h4>Quieres conocer mas sobre el tema ,entra al siguiente link de un video, donde podras conocer mas sobre el tema.</h4>
+                <center><a href="https://www.youtube.com/watch?v=q1fGND4Qy3o&ab_channel=hdeleon.net" target="_blank" class="enlace-animado"> link para video </a></center><br>
+                <div class="hacker-boy-container">
+                    <img src="./img/hack.jpg" alt="Niño Hacker" class="hacker-boy">
+                </div>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 Frontend Web</p>
+        <!-- Agrega enlaces a tus redes sociales aquí -->
+    </footer>
+
+    <!-- Enlaces a Bootstrap y jQuery (JavaScript) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        
+        // Función para mostrar u ocultar los subtemas
+        function toggleSubtopics() {
+            const subtopics = document.querySelector('.subtopics');
+            subtopics.style.display = subtopics.style.display === 'none' ? 'block' : 'none';
+        }
+        
+
+        // Función para mostrar u ocultar el contenido de un subtema
+        function toggleSubtopic(subtopicNumber) {
+            const subtopicContent = document.getElementById(`subtopic-content-${subtopicNumber}`);
+            subtopicContent.style.display = subtopicContent.style.display === 'none' ? 'block' : 'none';
+        }
+        // Variable global para mantener un seguimiento del subtema actualmente abierto
+let subtopicActual = null;
+
+// Función para mostrar u ocultar el contenido de un subtema
+function toggleSubtopic(subtopicNumber) {
+    const subtopicContent = document.getElementById(`subtopic-content-${subtopicNumber}`);
+    
+    // Si el subtema actual es diferente al subtema seleccionado, ocultarlo
+    if (subtopicActual !== null && subtopicActual !== subtopicContent) {
+        subtopicActual.style.display = 'none';
+    }
+
+    // Mostrar o ocultar el subtema seleccionado
+    if (subtopicContent.style.display === 'none' || subtopicActual !== subtopicContent) {
+        subtopicContent.style.display = 'block';
+    } else {
+        subtopicContent.style.display = 'none';
+    }
+
+    // Actualizar el subtema actual
+    subtopicActual = subtopicContent;
+}
+// Variable global para mantener un seguimiento del estado de los subtemas
+let subtopicsVisible = false;
+
+// Función para mostrar u ocultar los subtemas y su contenido
+function toggleSubtopics() {
+    const subtopics = document.querySelector('.subtopics');
+    const subtopicsContent = document.querySelectorAll('.subtopics-content');
+
+    if (subtopicsVisible) {
+        // Si los subtemas están visibles, ocultarlos y ocultar su contenido
+        subtopics.style.display = 'none';
+        subtopicsContent.forEach(function (subtopic) {
+            subtopic.style.display = 'none';
+        });
+    } else {
+        // Si los subtemas están ocultos, mostrarlos
+        subtopics.style.display = 'block';
+    }
+
+    // Cambiar el estado de los subtemas
+    subtopicsVisible = !subtopicsVisible;
+}
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section.style.display === 'none') {
+        section.style.display = 'block';
+    } else {
+        section.style.display = 'none';
+    }
+}
+function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        
+        // Oculta todas las secciones con clase 'content'
+        var sections = document.getElementsByClassName('content');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+        
+        // Muestra la sección seleccionada
+        section.style.display = 'block';
+    }
+    function toggleSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        
+        // Comprueba si la sección actual está visible
+        if (section.style.display === 'block') {
+            // Si está visible, la oculta
+            section.style.display = 'none';
+        } else {
+            // Si no está visible, oculta todas las secciones con clase 'content'
+            var sections = document.getElementsByClassName('content');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            
+            // Muestra la sección seleccionada
+            section.style.display = 'block';
+        }
+    }
+    </script>
+    
+</body>
+</html>
+
